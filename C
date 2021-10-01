@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int main(void)
+{
+        float num1, /* " Float real " */
+              num2;
+        char oper;  /* " char caractere " */
+
+        do
+        {
+            printf("\t\tCalculadora FIAP - Codificando em C\n\n"); 
+            printf("\t\tRobson Soares Moraes       RM:87343\n\n");
+                  
+           printf("OPERAÇÕES: '+:soma'  '-:subtracao'  '/:divisao'  '*:multiplicao'\n\n");
+            
+            printf("Digite a operação: \n");
+        
+            printf("Para Sair! escreva:Sair\n");
+
+            scanf("%f", &num1); /* %f ponto flutuante  */
+            scanf(" %c",&oper); /* %c caracter simples  */
+            scanf("%f", &num2); /* %f ponto flutuante  */
+           
+            
+            printf("Resultado: %.f %c %.f = ", num1,oper,num2);
+            switch( oper )
+            {
+                case '+':
+                     printf("%.f\n\n", num1 + num2);
+                        break;
+
+                case '-':
+                        printf("%.f\n\n", num1 - num2);
+                        break;
+
+                case '*':
+                        printf("%.f\n\n", num1 * num2);
+                        break;
+
+                case '/':
+                        if(num2 != 0)
+                            printf("%.f\n\n", num1 / num2);
+                        else
+                            printf("Errouuuuuu! Não existe divisão por 0\n\n");
+                        break;
+
+                case '%':
+                        printf("%d\n\n", (int)num1 % (int)num2);
+                        break;
+
+                default:
+                        if(num1 != 0 && oper != '0' && num2 != 0)
+                            printf(" Operação invalida\n\n ");
+                        else
+                            printf(" Fui!\n "); 
+            }
+        }while(num1 != 0 && oper != '0' && num2 != 0);
+}
